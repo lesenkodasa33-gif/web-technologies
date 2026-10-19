@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 4 — Анкета</title>
+</head>
+
+<body>
+
+<div style="width: 650px; margin: 0 auto;">
+
+    <h1 style="text-align: center;">Анкета користувача</h1>
+
+    <form method="get">
+
+        <fieldset>
+            <legend>Особиста інформація</legend>
+
+            <label for="name">Ім'я:</label><br>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   value=""
+                   placeholder="Введіть ім'я"
+                   required
+                   tabindex="1">
+            <br><br>
+
+            <label for="about">Про себе:</label><br>
+            <textarea id="about"
+                      name="about"
+                      placeholder="Розкажіть про себе"
+                      tabindex="2"></textarea>
+            <br><br>
+
+            <label for="password">Пароль:</label><br>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   value=""
+                   placeholder="6 символів"
+                   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6}"
+                   required
+                   tabindex="3">
+            <br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   value=""
+                   placeholder="example@gmail.com"
+                   autocomplete="off"
+                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                   required
+                   tabindex="4">
+            <br><br>
+
+            <label for="phone">Телефон:</label><br>
+            <input type="tel"
+                   id="phone"
+                   name="phone"
+                   value=""
+                   placeholder="0991234567"
+                   pattern="[0-9]{10}"
+                   required
+                   tabindex="5">
+            <br><br>
+
+            <label for="birthdate">Дата народження:</label><br>
+            <input type="date"
+                   id="birthdate"
+                   name="birthdate"
+                   value=""
+                   tabindex="6">
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Стать</legend>
+
+            <label>
+                <input type="radio" name="gender" value="female">
+                Жіноча
+            </label><br>
+
+            <label>
+                <input type="radio" name="gender" value="male">
+                Чоловіча
+            </label><br>
+
+            <label>
+                <input type="radio" name="gender" value="other">
+                Інше
+            </label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Форма навчання</legend>
+
+            <label>
+                <input type="radio" name="study" value="budget" checked>
+                Бюджет
+            </label><br>
+
+            <label>
+                <input type="radio" name="study" value="contract">
+                Контракт
+            </label><br>
+
+            <label>
+                <input type="radio" name="study" value="other">
+                Інше
+            </label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Інтереси</legend>
+
+            <label>
+                <input type="checkbox" name="interest" value="programming">
+                Програмування
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="interest" value="sport">
+                Спорт
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="interest" value="music">
+                Музика
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="interest" value="travel">
+                Подорожі
+            </label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Додаткова інформація</legend>
+
+            <label for="course">Курс:</label><br>
+            <select id="course" name="course">
+                <option value="1">1 курс</option>
+                <option value="2">2 курс</option>
+                <option value="3" selected>3 курс</option>
+                <option value="4">4 курс</option>
+                <option value="5">Магістратура</option>
+            </select>
+
+            <br><br>
+
+            <label for="languages">Мови:</label><br>
+            <select id="languages" name="languages" multiple>
+                <option value="ukrainian">Українська</option>
+                <option value="english">Англійська</option>
+                <option value="german">Німецька</option>
+                <option value="spanish">Іспанська</option>
+                <option value="french">Французька</option>
+                <option value="polish">Польська</option>
+            </select>
+
+            <br><br>
+
+            <label for="technology">IT-напрям:</label><br>
+            <select id="technology" name="technology">
+
+                <optgroup label="Розробка">
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="mobile">Mobile</option>
+                </optgroup>
+
+                <optgroup label="Дані">
+                    <option value="analytics">Data Analytics</option>
+                    <option value="science">Data Science</option>
+                    <option value="ai">AI</option>
+                </optgroup>
+
+                <optgroup label="Дизайн">
+                    <option value="ui">UI</option>
+                    <option value="ux">UX</option>
+                    <option value="graphic">Graphic Design</option>
+                </optgroup>
+
+                <optgroup label="Інше">
+                    <option value="qa">QA</option>
+                    <option value="devops">DevOps</option>
+                    <option value="security">Cybersecurity</option>
+                </optgroup>
+
+            </select>
+
+            <br><br>
+
+            <label for="city">Місто:</label><br>
+            <input list="cities"
+                   id="city"
+                   name="city"
+                   value=""
+                   placeholder="Оберіть місто">
+
+            <datalist id="cities">
+                <option value="Чернівці">
+                <option value="Львів">
+                <option value="Київ">
+                <option value="Одеса">
+                <option value="Івано-Франківськ">
+            </datalist>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Аудіофайли</legend>
+
+            <label for="audio">Завантажити аудіофайли:</label><br>
+            <input type="file"
+                   id="audio"
+                   name="audio"
+                   accept="audio/*"
+                   multiple>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Відправити</button>
+        <button type="reset">Очистити</button>
+
+    </form>
+
+    <br>
+
+    <form method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Демонстрація POST-запиту</legend>
+
+            <label for="post-name">Ім'я:</label>
+            <input type="text"
+                   id="post-name"
+                   name="postName"
+                   value=""
+                   placeholder="Введіть ім'я">
+
+            <button type="submit">Відправити POST</button>
+        </fieldset>
+    </form>
+
+    <p style="text-align: center;">
+        <a href="../index.html">Повернутись на головну</a>
+    </p>
+
+</div>
+
+</body>
+</html>
