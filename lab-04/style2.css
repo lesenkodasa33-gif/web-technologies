@@ -1,0 +1,80 @@
+
+/* Завдання №2 — Млинці з сиром */
+
+body {
+    margin: 8px;
+    background-color: white;
+    font-family: "Times New Roman", serif;
+    color: black;
+}
+
+.recipe {
+    border: 1px solid #8888cc;
+    text-align: center;
+    padding: 10px 20px 30px;
+    min-height: 520px;
+}
+
+#recipe-title {
+    color: red;
+    font-family: "Times New Roman", serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0 25px;
+}
+
+.ingredients-title {
+    color: black;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 25px;
+}
+
+.recipe .ingredients {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    margin: 0;
+}
+
+.recipe strong {
+    font-weight: bold;
+}
+
+.recipe u {
+    text-decoration: underline;
+}
+
+.recipe s {
+    text-decoration: line-through;
+}
+
+.recipe mark {
+    background-color: yellow;
+    color: black;
+}
+
+.recipe-line {
+    display: block;
+    border: none;
+    background-color: green;
+    height: 7px;
+    width: 65%;
+    margin: 20px auto;
+}
+
+.recipe .recipe-note {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.2;
+    text-align: center;
+    margin: 20px 0 0;
+}

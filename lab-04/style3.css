@@ -1,0 +1,61 @@
+
+/* Завдання №3 — CSS-селектори */
+
+/* Усі посилання — фіолетові */
+a {
+    color: purple;
+}
+
+/* Посилання головного меню — зелені */
+.main-link {
+    color: green;
+}
+
+/* Маркери головного меню */
+.main-menu {
+    list-style-type: disc;
+}
+
+/* Ягоди — квадратні маркери */
+.berry-list {
+    list-style-type: square;
+}
+
+/* Овочі — маркери у вигляді піктограми */
+.vegetable-list {
+    list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Ccircle cx='6' cy='6' r='5' fill='%23ff9900'/%3E%3C/svg%3E");
+}
+
+/* Прибираємо маркери у вкладених списках */
+body ul ul ul {
+    list-style-type: none;
+}
+
+/* Посилання в останньому списку — без підкреслення */
+.berry-list a {
+    text-decoration: none;
+}
+
+/* Блок «Різне» */
+.other-list {
+    list-style-position: inside;
+}
+
+/* Нумеровані списки */
+ol {
+    list-style-position: inside;
+    margin: 10px 0;
+}
+
+/* Відступи для зручності */
+li {
+    margin-bottom: 10px;
+}
+.other-list {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.other-list > li {
+    list-style-type: none;
+}

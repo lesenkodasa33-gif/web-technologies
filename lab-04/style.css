@@ -1,0 +1,52 @@
+
+/* Універсальний селектор */
+* {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+/* Селектори тегів */
+p {
+    color: green;
+    text-align: center;
+}
+
+div {
+    text-align: justify;
+}
+
+/* Перший і третій абзаци */
+.red {
+    color: red;
+}
+
+/* Перший абзац без перенесення рядків */
+.no-wrap {
+    white-space: nowrap;
+}
+
+/* Другий абзац: курсив і жирний */
+#special {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Тінь для другого абзацу і другого div */
+.shadow {
+    text-shadow: 5px -5px 3px #888888;
+}
+
+/* Перший div */
+.crossed {
+    text-decoration: line-through;
+    text-transform: uppercase;
+    text-indent: 50px;
+}
+
+/* Другий div */
+.spacing {
+    letter-spacing: 30px;
+    word-spacing: 50px;
+}
+
