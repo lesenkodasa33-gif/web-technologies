@@ -1,0 +1,730 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 8px;
+}
+
+/* Основний помаранчевий блок */
+.travel-plan {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color: white;
+    box-sizing: content-box;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin: 0 0 10px;
+}
+
+/* Загальні властивості списків */
+ul {
+    list-style: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+li {
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 35px 35px;
+}
+
+/* Список першого рівня */
+.main-list {
+    background-color: rgb(103, 158, 128);
+    padding: 0 20px 0 50px;
+    margin: 0;
+}
+
+
+
+.main-list > li {
+    position: relative;
+    background-image: none;
+}
+
+.main-list > li::before {
+    content: "";
+    position: absolute;
+    left: -43px;
+    top: 8px;
+    width: 35px;
+    height: 35px;
+
+    background-image: url("icons/checklist.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+/* Вкладений список */
+.sub-list {
+    padding: 0;
+    margin: 0;
+}
+
+/* Пункти другого рівня */
+
+.sub-list > li {
+    background-color: rgb(153, 180, 102);
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 10px;
+    padding-left: 40px;
+
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 30px 30px;
+}
+
+
+/* Загальні властивості span */
+span {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+/* Назви розділів */
+.main-list > li > span {
+    background-color: rgb(199, 124, 106);
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+/* Пункти вкладеного списку */
+.sub-list > li > span {
+    background-color: rgb(218, 106, 32);
+}
+
+/* Іконки */
+.route {
+    background-image: url("icons/route.svg");
+}
+
+.flight {
+    background-image: url("icons/flight.svg");
+}
+
+.hotel {
+    background-image: url("icons/hotel.svg");
+}
+
+.car {
+    background-image: url("icons/car.svg");
+}
+
+.bar {
+    background-image: url("icons/bar.svg");
+}
+
+.casino {
+    background-image: url("icons/casino.svg");
+}
+
+.museum {
+    background-image: url("icons/museum.svg");
+}
+
+.festival {
+    background-image: url("icons/festival.svg");
+}
+
+/* ===== Завдання 2. Таблиця тарифів ===== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Усі клітинки */
+table th,
+table td {
+    padding: 20px 10px;
+    border: 2px solid white;
+}
+
+/* Заголовки тарифів */
+table thead th {
+    background-color: #e3b9b9;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    height: 65px;
+}
+
+/* Перший заголовок */
+table thead th:first-child {
+    background-color: #f2dddd;
+    font-size: 18px;
+}
+
+/* Третій тариф */
+table thead th:nth-child(3) {
+    background-color: #d69b9b;
+}
+
+/* Четвертий тариф */
+table thead th:nth-child(4) {
+    background-color: #913939;
+}
+
+/* П'ятий тариф */
+table thead th:nth-child(5) {
+    background-color: #642626;
+}
+
+/* Назви характеристик */
+table tbody th {
+    background-color: #bd5353;
+    color: white;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* Клітинки з плюсами та мінусами */
+table tbody td {
+    background-color: #e3b9b9;
+    color: #555555;
+    font-size: 28px;
+}
+
+/* Чергування кольорів рядків */
+table tbody tr:nth-child(even) td {
+    background-color: #f2dddd;
+}
+
+/* ===== Завдання 3. Анкета ===== */
+
+body:has(form) {
+    background-color: #edf4fc;
+    color: #253858;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+body:has(form) > div {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(40, 80, 130, 0.12);
+    box-sizing: border-box;
+}
+
+body:has(form) h1 {
+    color: #315d98;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+body:has(form) fieldset {
+    border: 2px solid #b8d0ee;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f8fbff;
+}
+
+body:has(form) legend {
+    color: #315d98;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+body:has(form) label {
+    color: #334c70;
+    font-weight: 500;
+}
+
+body:has(form) input,
+body:has(form) textarea,
+body:has(form) select {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    accent-color: #477fca;
+}
+
+body:has(form) input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+body:has(form) textarea,
+body:has(form) select {
+    padding: 9px;
+    border: 1px solid #a8c2e2;
+    border-radius: 6px;
+    background-color: white;
+    color: #253858;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body:has(form) textarea {
+    min-height: 90px;
+    width: 100%;
+}
+
+body:has(form) button {
+    background-color: #477fca;
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+body:has(form) button:hover {
+    background-color: #315d98;
+}
+
+body:has(form) a {
+    color: #315d98;
+}
+body:has(form) > div {
+    width: 100% !important;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ===== Завдання 4. Градієнти ===== */
+
+/* Контейнер для чотирьох блоків */
+main {
+    font-size: 0;
+}
+
+/* Загальні властивості блоків */
+body:not(:has(.business-card)) main > div {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    padding: 15px;
+
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+/* Блок 1 — діагональні смуги */
+body:not(:has(.business-card)) main > div:nth-of-type(1)
+main > div:nth-of-type(1) {
+    background-image: linear-gradient(
+        45deg,
+        #3264a8 25%,
+        #77a6e0 25%,
+        #77a6e0 50%,
+        #3264a8 50%,
+        #3264a8 75%,
+        #77a6e0 75%
+    );
+    background-size: 40px 40px;
+}
+
+/* Блок 2 — клітинки */
+body:not(:has(.business-card)) main > div:nth-of-type(2)
+main > div:nth-of-type(2) {
+    background-color: #b9d4f3;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(40, 91, 160, 0.45) 50%,
+            transparent 50%
+        ),
+        linear-gradient(
+            0deg,
+            #78a6dd 50%,
+            transparent 50%
+        );
+    background-size: 60px 60px;
+}
+
+/* Блок 3 — радіальний градієнт */
+body:not(:has(.business-card)) main > div:nth-of-type(3)
+main > div:nth-of-type(3) {
+    background-image: radial-gradient(
+        circle farthest-corner at 30px 20px,
+        #dcecff 0%,
+        #74a9e5 35%,
+        #3264a8 70%,
+        #142f5c 100%
+    );
+}
+
+/* Блок 4 — затемнення знизу */
+body:not(:has(.business-card)) main > div:nth-of-type(4)
+main > div:nth-of-type(4) {
+    background-color: #33bbf1;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5),
+        transparent
+    );
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}
+
+/* ===== Завдання 5 ===== */
+
+/* Загальне оформлення сторінки */
+body:has(section) {
+    background-color: #f0f5fc;
+    font-family: Arial, sans-serif;
+    color: #243b5a;
+}
+
+body:has(section) section {
+    margin: 30px 0;
+}
+
+body:has(section) h2 {
+    color: #285b9a;
+    font-size: 25px;
+}
+
+/* ===== Частина 1. box-sizing ===== */
+
+section:nth-of-type(1) > div {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #3568a8;
+    margin: 20px;
+    background-color: #c7def8;
+    vertical-align: top;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+section:nth-of-type(1) > div:nth-of-type(1) {
+    box-sizing: content-box;
+    /* 300 + 40 padding + 10 border = 350px */
+}
+
+section:nth-of-type(1) > div:nth-of-type(2) {
+    box-sizing: border-box;
+    /* Загальна ширина = 300px */
+}
+
+/* ===== Частина 2. overflow ===== */
+
+section:nth-of-type(2) > div {
+    width: 300px;
+    max-height: 80px;
+    border: 2px solid #3568a8;
+    background-color: #dceaff;
+    padding: 10px;
+    margin: 20px 0 180px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+section:nth-of-type(2) > div:nth-of-type(1) {
+    overflow: visible;
+}
+
+section:nth-of-type(2) > div:nth-of-type(2) {
+    overflow: hidden;
+}
+
+section:nth-of-type(2) > div:nth-of-type(3) {
+    overflow: scroll;
+}
+
+section:nth-of-type(2) > div:nth-of-type(4) {
+    overflow: auto;
+}
+
+/* ===== Частина 3. display ===== */
+
+section:nth-of-type(3) ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    background-color: #3568a8;
+}
+
+section:nth-of-type(3) li {
+    display: inline-block;
+}
+
+section:nth-of-type(3) a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: #3568a8;
+}
+
+section:nth-of-type(3) a:hover {
+    background-color: #214776;
+}
+
+/* Приховуємо пункт "Блог" */
+section:nth-of-type(3) li:nth-child(4) {
+    display: none;
+}
+
+/*
+display: none повністю прибирає елемент
+із потоку сторінки — він не займає місця.
+
+visibility: hidden приховує елемент,
+але залишає зайняте ним місце.
+
+opacity: 0 робить елемент прозорим,
+але він продовжує займати місце
+і може реагувати на натискання.
+*/
+
+/* ===== Завдання 6. Сайт-візитівка ===== */
+
+/* Фон сторінки */
+body:has(.business-card) {
+    background-color: #1b2a41;
+    background-image: url("img/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #19395d;
+}
+
+/* Головний контейнер */
+main.business-card {
+    box-sizing: border-box;
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+}
+
+/*
+Якщо ширина вікна менша за 320px,
+контейнер усе одно матиме мінімальну
+ширину 320px, тому може з'явитися
+горизонтальна прокрутка.
+*/
+
+.business-card h1,
+.business-card h2 {
+    color: #24558c;
+}
+
+.business-card section {
+    margin: 30px 0;
+}
+
+/* Частина 1. display */
+
+.tags-section div {
+    display: inline;
+    width: 200px;
+    height: 100px;
+    background-color: #9dc6ee;
+    padding: 5px;
+}
+
+/*
+Для display: inline властивості
+width і height не діють, оскільки
+розміри рядкового елемента
+визначаються його вмістом.
+*/
+
+.tags-section span {
+    display: block;
+    width: 150px;
+    background-color: #bcd9f5;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Частина 2. background-repeat */
+
+.repeat-section > div {
+    height: 200px;
+    border: 2px solid #4477aa;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #e8f3ff;
+    background-image: url("img/pattern.png");
+    background-size: 60px 60px;
+}
+
+.repeat-section > div:nth-of-type(1) {
+    background-repeat: repeat-x;
+}
+
+.repeat-section > div:nth-of-type(2) {
+    background-repeat: repeat-y;
+}
+
+.repeat-section > div:nth-of-type(3) {
+    background-repeat: space;
+}
+
+.repeat-section > div:nth-of-type(4) {
+    background-repeat: round;
+}
+
+/*
+space — повторює зображення без зміни
+його розміру, розподіляючи вільний простір.
+
+round — змінює розмір зображень так,
+щоб вони заповнили блок без проміжків.
+*/
+
+/* Частина 3. background-size */
+
+.size-section > div {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    height: 200px;
+    border: 2px solid #4477aa;
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+
+    background-image: url("img/landscape.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #d5e9fa;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+}
+
+.size-section > div:nth-of-type(1) {
+    background-size: contain;
+}
+
+.size-section > div:nth-of-type(2) {
+    background-size: cover;
+}
+
+/* Частина 4. background-attachment */
+
+.attachment-section > div {
+    max-height: 150px;
+    overflow: auto;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid #4477aa;
+
+    background-image: url("img/landscape.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+.attachment-section > div:nth-of-type(1) {
+    background-attachment: scroll;
+}
+
+.attachment-section > div:nth-of-type(2) {
+    background-attachment: local;
+}
+
+/*
+scroll — фон залишається прив'язаним
+до області елемента під час прокручування
+його внутрішнього вмісту.
+
+local — фон прокручується разом
+із вмістом елемента.
+*/
+
+.business-card footer {
+    text-align: center;
+    padding: 15px;
+    color: #24558c;
+}
+
+/* ===== Виправлення завдання 6 ===== */
+
+/* П'ять рядкових div */
+body:has(.business-card) .tags-section > div {
+    display: inline;
+    width: 200px;
+    height: 100px;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    background: #9dc6ee;
+    font-size: 16px;
+    font-weight: normal;
+    color: #19395d;
+}
+
+/*
+width і height не працюють для display: inline,
+тому що рядкові елементи займають
+стільки місця, скільки потрібно їхньому тексту.
+*/
+
+/* П'ять блокових span */
+body:has(.business-card) .tags-section > span {
+    display: block;
+    box-sizing: border-box;
+    width: 150px;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+/* Чотири блоки з повторенням фону */
+body:has(.business-card) .repeat-section > div {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    max-height: none;
+    margin: 15px 0;
+    padding: 10px;
+    border: 2px solid #4477aa;
+    overflow: visible;
+    background-color: #e8f3ff;
+    background-image: url("img/pattern.png");
+    background-size: 60px 60px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #19395d;
+}
+
+/* Підтверджуємо потрібні види повторення */
+body:has(.business-card) .repeat-section > div:nth-of-type(1) {
+    background-repeat: repeat-x;
+}
+
+body:has(.business-card) .repeat-section > div:nth-of-type(2) {
+    background-repeat: repeat-y;
+}
+
+body:has(.business-card) .repeat-section > div:nth-of-type(3) {
+    background-repeat: space;
+}
+
+body:has(.business-card) .repeat-section > div:nth-of-type(4) {
+    background-repeat: round;
+}
