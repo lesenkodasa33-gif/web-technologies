@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+:root{--accent:#e76f51;--ink:#263247;--paper:#f4f6f8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font-family:Inter,Arial,sans-serif;color:var(--ink)}
+.demo{width:min(100% - 32px,900px);margin:48px auto}.stage{display:flex;flex-wrap:wrap;gap:12px;background:white;padding:20px;border:1px dashed #aab7c4;border-radius:12px}
+.stage div{flex:1 1 220px;background:var(--accent);color:white;padding:28px;text-align:center;border-radius:8px}

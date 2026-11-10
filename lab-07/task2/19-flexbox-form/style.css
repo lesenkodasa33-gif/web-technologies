@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--accent:#e76f51;--ink:#263247;--muted:#64748b;--paper:#f4f6f8;--line:#dce3ea}
+*{box-sizing:border-box}
+html{font-family:'Inter',Arial,sans-serif;color:var(--ink)}
+body{margin:0;background:var(--paper);line-height:1.6}
+.demo{width:min(100% - 32px,900px);margin:48px auto}
+h1{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;margin:0 0 12px}
+p{color:var(--muted)}
+.stage{background:white;border:1px dashed #aab7c4;border-radius:12px;padding:20px;min-height:160px;margin-top:24px}
+@media(max-width:600px){.demo{margin:28px auto}.stage{padding:14px}}
+
+.booking{display:flex;align-items:end;gap:12px;flex-wrap:wrap;background:white;padding:20px;border-radius:10px;border:1px solid var(--line)}.booking label{display:flex;flex-direction:column;gap:6px;flex:1 1 150px}.booking input{width:100%;padding:12px;border:1px solid var(--line);border-radius:6px;font:inherit}.booking button{border:0;background:var(--accent);color:white;padding:13px 18px;border-radius:6px;font:inherit;cursor:pointer}@media(max-width:550px){.booking{align-items:stretch;flex-direction:column}.booking button{width:100%}}
