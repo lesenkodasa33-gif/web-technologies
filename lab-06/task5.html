@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №6 — Завдання 5</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+
+    <main class="page">
+        <h1>Прогноз погоди</h1>
+
+        <section class="weather">
+
+            <!-- Прогноз на декілька днів -->
+            <div class="forecast">
+                <div class="day">
+                    <span>Mon</span>
+                    <span>☀️</span>
+                    <strong>17°</strong>
+                </div>
+
+                <div class="day">
+                    <span>Tue</span>
+                    <span>🌤️</span>
+                    <strong>19°</strong>
+                </div>
+
+                <div class="day">
+                    <span>Wed</span>
+                    <span>☁️</span>
+                    <strong>16°</strong>
+                </div>
+
+                <div class="day">
+                    <span>Thu</span>
+                    <span>🌧️</span>
+                    <strong>18°</strong>
+                </div>
+
+                <div class="day">
+                    <span>Fri</span>
+                    <span>☀️</span>
+                    <strong>21°</strong>
+                </div>
+            </div>
+
+            <!-- Основна картка -->
+            <div class="weather-card">
+                <span class="temperature">17°</span>
+                <span class="city">Київ, Україна</span>
+            </div>
+
+            <!-- Хмара поверх картки -->
+           <div class="cloud"></div>
+
+            <!-- Кнопки навігації -->
+            <button class="arrow arrow-left" type="button"
+                    aria-label="Попередній день">←</button>
+
+            <button class="arrow arrow-right" type="button"
+                    aria-label="Наступний день">→</button>
+
+            <!-- Додаткова інформація -->
+            <div class="weather-info">
+                <span>Хмарно</span>
+                <span>Вітер: 5 м/с</span>
+                <span>Вологість: 65%</span>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

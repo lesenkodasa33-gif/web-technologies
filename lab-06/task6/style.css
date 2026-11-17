@@ -1,0 +1,266 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8eaf6, #c5cae9);
+    color: #263238;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.page-title {
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: #263b68;
+}
+
+.page-description {
+    margin-bottom: 30px;
+    color: #596579;
+    text-align: center;
+}
+
+/* Прихований, але доступний для клавіатури перемикач */
+.popup-toggle,
+.more-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Кнопка відкриття */
+.popup-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #0878bd;
+    border-radius: 8px;
+    background: #0878bd;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.popup-button:hover {
+    background: #075b91;
+    transform: translateY(-2px);
+}
+
+.popup-toggle:focus-visible + .popup-button {
+    outline: 3px solid #ffb703;
+    outline-offset: 4px;
+}
+
+/* Початковий стан попапу — прихований */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(10, 20, 40, 0.65);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+    transition: opacity 0.25s, visibility 0.25s;
+}
+
+/* Відкриття попапу через checkbox */
+.popup-toggle:checked ~ .popup-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Затемнений фон */
+.popup-backdrop {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+}
+
+/* Вікно попапу */
+.popup-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 500px);
+    max-height: 90vh;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+    animation: popup-appear 0.25s ease;
+}
+
+@keyframes popup-appear {
+    from {
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.popup-title {
+    margin: 0 35px 10px 0;
+    color: #0878bd;
+    font-size: 26px;
+}
+
+.popup-text {
+    margin-bottom: 20px;
+    color: #596579;
+}
+
+/* Кнопка закриття */
+.popup-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #555;
+    font-size: 28px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.popup-close:hover {
+    background: #ffe1e1;
+    color: #d62828;
+}
+
+.popup-close:focus-visible {
+    outline: 3px solid #0878bd;
+}
+
+/* Кнопка More */
+.more-button {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 22px;
+    border-radius: 6px;
+    background: #0878bd;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.more-button:hover {
+    background: #075b91;
+}
+
+.more-toggle:focus-visible + .more-button {
+    outline: 3px solid #ffb703;
+    outline-offset: 3px;
+}
+
+/* Список іконок */
+.popup-content {
+    max-height: 190px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 8px;
+    background: #f3f6fa;
+    outline: none;
+}
+
+.popup-content:focus {
+    outline: 3px solid #0878bd;
+    outline-offset: 2px;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.icon-item {
+    display: flex;
+    min-height: 95px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 5px;
+    border: 1px solid #dce3ed;
+    border-radius: 10px;
+    background: white;
+    color: #263238;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.icon-item:hover {
+    background: #e4f3ff;
+    transform: translateY(-3px);
+}
+
+.icon-item:focus {
+    outline: 3px solid #0878bd;
+    outline-offset: 2px;
+    background: #e4f3ff;
+}
+
+.icon-symbol {
+    font-size: 30px;
+}
+
+/* Додаткові сім іконок спочатку приховані */
+.extra-icon {
+    display: none;
+}
+
+/* Після натискання More показуємо всі 10 іконок */
+.more-toggle:checked ~ .popup-content .extra-icon {
+    display: flex;
+}
+
+/* Розширений стан стає прокручуваним */
+.more-toggle:checked ~ .popup-content {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Адаптація для вузьких екранів */
+@media (max-width: 450px) {
+    .popup-card {
+        padding: 22px 16px;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popup-title {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №6 — Завдання 2</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f4f6;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: min(90%, 650px);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 8px;
+            padding: 8px;
+            background: white;
+            border: 1px solid #aaa;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 12px;
+            border: 2px solid #888;
+            font-size: 15px;
+            min-height: 55px;
+        }
+
+        .trigger {
+            background: #00ad5b;
+            color: #064b2c;
+            cursor: pointer;
+        }
+
+        .hidden-block {
+            background: #5790d2;
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Поява блоку 2.1 */
+        .left-column:hover .block-21 {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Поява блоку 2.2 */
+        .right-column:hover .block-22 {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .block-22 {
+            order: -1;
+        }
+
+        @media (max-width: 450px) {
+            .layout {
+                grid-template-columns: 1fr 1.5fr;
+            }
+
+            .block {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+        <h1>Завдання 2 — Варіант 7</h1>
+
+        <div class="layout">
+
+            <div class="column left-column">
+                <div class="block trigger">
+                    Блок 1.1
+                </div>
+
+                <div class="block hidden-block block-21">
+                    Текст всередині Блоку 2.1
+                </div>
+            </div>
+
+            <div class="column right-column">
+                <div class="block hidden-block block-22">
+                    Текст всередині Блоку 2.2
+                </div>
+
+                <div class="block trigger">
+                    Блок 1.2
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

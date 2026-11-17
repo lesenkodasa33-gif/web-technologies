@@ -1,0 +1,328 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f4f8;
+    color: #263238;
+}
+
+/* Горизонтальне меню */
+.top-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #172b4d;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0 25px;
+    height: 100%;
+}
+
+.top-menu > li {
+    position: relative;
+    float: left;
+    height: 100%;
+}
+
+.top-menu > .top-menu-last {
+    float: right;
+}
+
+.top-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 60px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.top-link .material-symbols-outlined {
+    font-size: 28px;
+}
+
+.top-link:hover,
+.top-link:focus-visible,
+.top-link.active {
+    background: #0878bd;
+    outline: none;
+}
+
+/* Випадне горизонтальне меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    min-width: 190px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #243b60;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.has-dropdown:hover > .dropdown-menu,
+.has-dropdown:focus-within > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 13px 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+    background: #0878bd;
+    outline: none;
+}
+
+/* Вертикальне меню */
+.side-navigation {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    background: #203653;
+    z-index: 900;
+}
+
+.side-title {
+    color: #ffd166;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 10px;
+    margin: 0;
+}
+
+.side-menu,
+.side-submenu,
+.side-submenu-level3 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu > li {
+    position: relative;
+}
+
+.side-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.side-link .material-symbols-outlined {
+    font-size: 23px;
+}
+
+.side-link:hover,
+.side-link:focus-visible,
+.side-link.active {
+    background: #0878bd;
+    outline: none;
+}
+
+/* Другий рівень вертикального меню */
+.side-submenu {
+    display: none;
+    background: #172b4d;
+}
+
+.side-has-dropdown:hover > .side-submenu,
+.side-has-dropdown:focus-within > .side-submenu {
+    display: block;
+}
+
+.side-submenu > li {
+    position: relative;
+}
+
+.side-submenu a {
+    display: block;
+    padding: 12px 16px 12px 52px;
+    color: #e4eaf2;
+    text-decoration: none;
+}
+
+.side-submenu a:hover,
+.side-submenu a:focus-visible {
+    color: #ffd166;
+    background: #304c70;
+    outline: none;
+}
+
+/* Третій рівень вертикального меню */
+.side-submenu-level3 {
+    display: none;
+    background: #10213a;
+}
+
+.side-submenu > li:hover > .side-submenu-level3,
+.side-submenu > li:focus-within > .side-submenu-level3 {
+    display: block;
+}
+
+.side-submenu-level3 a {
+    padding-left: 70px;
+    font-size: 14px;
+}
+
+/* Основний вміст */
+.content {
+    margin-left: 220px;
+    padding: 90px 35px 40px;
+}
+
+.intro-section {
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.intro-section h1 {
+    margin-top: 0;
+    color: #172b4d;
+}
+
+/* Липке меню */
+.sticky-navigation {
+    position: sticky;
+    top: 60px;
+    z-index: 800;
+    margin-top: 25px;
+    background: #0878bd;
+    border-radius: 8px;
+}
+
+.sticky-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sticky-link {
+    display: block;
+    padding: 15px 22px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.sticky-link:hover,
+.sticky-link:focus-visible,
+.sticky-link.active {
+    background: #172b4d;
+    outline: none;
+    border-radius: 6px;
+}
+
+/* Секції сторінки */
+.content-section {
+    min-height: 300px;
+    margin-top: 25px;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.content-section h2 {
+    color: #0878bd;
+}
+
+/* Адаптація */
+
+@media (max-width: 700px) {
+    .side-navigation {
+        width: 170px;
+    }
+
+    .side-title {
+        display: block;
+    }
+
+    .side-link {
+        justify-content: flex-start;
+        padding: 14px 12px;
+        gap: 10px;
+    }
+
+    .side-link > span:not(.material-symbols-outlined) {
+        display: inline;
+    }
+
+    .side-submenu {
+        position: relative;
+        left: auto;
+        width: 100%;
+    }
+
+    .side-submenu a {
+        padding-left: 25px;
+    }
+
+    .side-submenu-level3 a {
+        padding-left: 40px;
+    }
+
+    .content {
+        margin-left: 170px;
+        padding: 85px 15px 25px;
+    }
+
+    .top-menu {
+        padding: 0 5px;
+    }
+
+    .top-link {
+        width: 48px;
+    }
+
+    .intro-section,
+    .content-section {
+        padding: 20px;
+    }
+
+    .sticky-menu {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .sticky-link {
+        white-space: nowrap;
+        padding: 15px 12px;
+    }
+}

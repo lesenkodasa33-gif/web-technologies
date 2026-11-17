@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №6 — Завдання 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="page">
+        <h1 class="page-title">CSS Popup</h1>
+        <p class="page-description">
+            Натисніть кнопку, щоб відкрити спливаюче вікно.
+        </p>
+
+        <!-- Керування відкриттям попапу -->
+        <input class="popup-toggle" type="checkbox" id="popup-toggle">
+
+        <label class="popup-button" for="popup-toggle">
+            Відкрити попап
+        </label>
+
+        <!-- Попап -->
+        <div class="popup-overlay">
+
+            <!-- Клік по фону закриває попап -->
+            <label class="popup-backdrop" for="popup-toggle"
+                   aria-label="Закрити попап"></label>
+
+            <section class="popup-card" aria-label="Спливаюче вікно">
+
+                <label class="popup-close" for="popup-toggle"
+                       aria-label="Закрити попап" tabindex="0">×</label>
+
+                <h2 class="popup-title">Мої іконки</h2>
+
+                <p class="popup-text">
+                    Виберіть потрібний розділ:
+                </p>
+
+                <!-- Керування розширенням попапу -->
+                <input class="more-toggle" type="checkbox" id="more-toggle">
+
+                <label class="more-button" for="more-toggle">
+                    More
+                </label>
+
+                <!-- Прокручуваний вміст -->
+                <div class="popup-content" tabindex="0"
+                     aria-label="Список іконок">
+
+                    <div class="icon-grid">
+
+                        <a class="icon-item" href="#home">
+                            <span class="icon-symbol">🏠</span>
+                            <span>Головна</span>
+                        </a>
+
+                        <a class="icon-item" href="#profile">
+                            <span class="icon-symbol">👤</span>
+                            <span>Профіль</span>
+                        </a>
+
+                        <a class="icon-item" href="#settings">
+                            <span class="icon-symbol">⚙️</span>
+                            <span>Налаштування</span>
+                        </a>
+
+                        <a class="icon-item extra-icon" href="#messages">
+                            <span class="icon-symbol">✉️</span>
+                            <span>Повідомлення</span>
+                        </a>
+
+                        <a class="icon-item extra-icon" href="#calendar">
+                            <span class="icon-symbol">📅</span>
+                            <span>Календар</span>
+                        </a>
+
+                        <a class="icon-item extra-icon" href="#photos">
+                            <span class="icon-symbol">🖼️</span>
+                            <span>Фото</span>
+                        </a>
+
+                        <a class="icon-item extra-icon" href="#music">
+                            <span class="icon-symbol">🎵</span>
+                            <span>Музика</span>
+                        </a>
+
+                        <a class="icon-item extra-icon" href="#video">
+                            <span class="icon-symbol">🎬</span>
+                            <span>Відео</span>
+                        </a>
+
+                        <a class="icon-item extra-icon" href="#documents">
+                            <span class="icon-symbol">📁</span>
+                            <span>Документи</span>
+                        </a>
+
+                        <a class="icon-item extra-icon" href="#help">
+                            <span class="icon-symbol">❓</span>
+                            <span>Допомога</span>
+                        </a>
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
