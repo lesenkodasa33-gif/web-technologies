@@ -1,0 +1,208 @@
+
+/* Скидання стандартних стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS-змінні */
+:root {
+    --text-color: #555;
+    --muted-color: #888;
+    --border-color: #ccc;
+    --background-color: #fff;
+}
+
+/* Основні стилі */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--text-color);
+    background: var(--background-color);
+    padding: 10px;
+}
+
+.weather {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Поточна погода */
+.current-weather {
+    padding: 0 20px 30px;
+}
+
+.current-weather h1 {
+    font-size: clamp(36px, 6vw, 76px);
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.current-date,
+.condition {
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: var(--muted-color);
+    margin-bottom: 8px;
+}
+
+.current-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.current-temperature {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.current-temperature img {
+    width: 120px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.temperature {
+    font-size: 64px;
+    color: #666;
+}
+
+.temperature span {
+    font-size: 26px;
+    vertical-align: top;
+}
+
+.weather-info {
+    font-size: 23px;
+    line-height: 1.5;
+    color: var(--muted-color);
+}
+
+/* Прогноз на тиждень */
+.forecast {
+    border-top: 2px solid var(--border-color);
+}
+
+.forecast-day {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 140px;
+    padding: 15px 25px;
+    border-bottom: 2px solid var(--border-color);
+    gap: 20px;
+}
+
+.forecast-day h2 {
+    flex: 1;
+    font-size: 23px;
+    font-weight: 700;
+    color: #444;
+}
+
+.forecast-day img {
+    width: 110px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.temperatures {
+    flex: 1;
+    font-size: 23px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.temperatures p:last-child {
+    color: var(--muted-color);
+}
+
+.pollen {
+    flex: 1;
+    font-size: 23px;
+    color: var(--muted-color);
+    text-align: center;
+}
+
+/* Адаптація для планшетів */
+@media (max-width: 700px) {
+    .current-details {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .weather-info {
+        font-size: 18px;
+    }
+
+    .forecast-day {
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .forecast-day h2 {
+        font-size: 18px;
+    }
+
+    .forecast-day img {
+        width: 75px;
+        height: 70px;
+    }
+
+    .temperatures,
+    .pollen {
+        font-size: 17px;
+    }
+}
+
+/* Адаптація для телефонів */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .current-weather {
+        padding: 10px 5px 20px;
+    }
+
+    .current-weather h1 {
+        font-size: 36px;
+    }
+
+    .current-temperature img {
+        width: 85px;
+        height: 75px;
+    }
+
+    .temperature {
+        font-size: 48px;
+    }
+
+    .weather-info {
+        font-size: 16px;
+    }
+
+    .forecast-day {
+        min-height: 95px;
+        padding: 10px 5px;
+        gap: 5px;
+    }
+
+    .forecast-day h2 {
+        font-size: 14px;
+    }
+
+    .forecast-day img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .temperatures,
+    .pollen {
+        font-size: 14px;
+    }
+}
